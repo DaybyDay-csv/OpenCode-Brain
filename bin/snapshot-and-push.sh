@@ -15,8 +15,17 @@ log() { printf "[%s] %s\n" "$(ts)" "$*" | tee -a "$LOG_FILE" ; }
 
 log "===== snapshot-and-push start ====="
 
-if ! command -v bun >/dev/null 2>&1; then
-  log "ERROR: bun not on PATH; cannot run plugin"
+# Pick a TS runtime. Prefer bun, fall back to node + --experimental-strip-types.
+run_plugin() {
+  if command -v bun >/dev/null 2>&1; then
+    bun "$PLUGIN" "$@"
+  else
+    node --experimental-strip-types "$PLUGIN" "$@"
+  fi
+}
+
+if ! command -v bun >/dev/null 2>&1 && ! command -v node >/dev/null 2>&1; then
+  log "ERROR: neither bun nor node on PATH; cannot run plugin"
   exit 0
 fi
 
@@ -32,7 +41,7 @@ if [ ! -d "$REPO/.git" ]; then
 fi
 
 # 1. Check status first — if there are no local commits ahead, do nothing.
-status_output="$(bun "$PLUGIN" --status 2>&1)"
+status_output="$(run_plugin --status 2>&1)"
 if ! echo "$status_output" | grep -q '"commitsAhead"'; then
   log "ERROR: --status did not return JSON; aborting"
   log "--- raw output ---"
@@ -49,7 +58,7 @@ if [ "${commits_ahead:-0}" -eq 0 ]; then
 fi
 
 # 2. Dry-run first to surface secret-check failures into the log.
-dryrun_output="$(bun "$PLUGIN" --push --dry-run 2>&1)"
+dryrun_output="$(run_plugin --push --dry-run 2>&1)"
 log "dry-run output:"
 echo "$dryrun_output" >> "$LOG_FILE"
 
@@ -66,7 +75,7 @@ if echo "$dryrun_output" | grep -q '"ok": false'; then
 fi
 
 # 3. Real push.
-push_output="$(bun "$PLUGIN" --push 2>&1)"
+push_output="$(run_plugin --push 2>&1)"
 log "push output:"
 echo "$push_output" >> "$LOG_FILE"
 
