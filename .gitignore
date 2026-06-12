@@ -1,15 +1,13 @@
-brain/
-  DaybyDay/
-  Garett/
-  LMDJ/
-  Linkedin/
-  DaybyDay-Blogpost-System/
-  DaybyDay-Outreacher/
-  Ferra/
-  Harmozy/
-  DaybyDay-Lead-Magnets/
-  Globalthy/
-index.jsonl
-brain/<Project>/
-  log.md
-  decisions.md
+# Local-only files. Anything not matched here is tracked.
+
+# OS noise
+.DS_Store
+*.swp
+*~
+
+# Editor
+.vscode/
+.idea/
+
+# Local state
+*.log.local
