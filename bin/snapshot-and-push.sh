@@ -81,6 +81,11 @@ echo "$push_output" >> "$LOG_FILE"
 
 if echo "$push_output" | grep -q '"ok": true'; then
   log "OK: pushed ${commits_ahead} commits"
+elif echo "$push_output" | grep -q '"reason": "auth-failed"'; then
+  log "PUSH FAILED: auth denied. Your SSH key has no write access to OpenCode-Brain on GitHub."
+  log "Fix: add the public key of one of these to the repo's deploy keys (Settings > Deploy keys > Add, allow write):"
+  log "  $(ls -1 ~/.ssh/*.pub 2>/dev/null | sed 's|^|    |')"
+  log "Or push manually: cd ~/Developer/OpenCode-Brain && git push origin main"
 else
   log "PUSH FAILED: see output above"
 fi
