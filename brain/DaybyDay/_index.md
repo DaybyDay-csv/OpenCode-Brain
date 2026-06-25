@@ -9,7 +9,8 @@ _(pendiente — pegar el contexto de Claude/Notion/etc. la primera vez)_
 
 ## Goals activos
 
--
+- Build unified knowledge graph from 12 project buckets (11,825 files, ~12.4 GB)
+  - See [graphify-ingest/](./graphify-ingest/_index.md) for build state
 
 ## Decisiones clave
 

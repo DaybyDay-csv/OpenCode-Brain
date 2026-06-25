@@ -1,0 +1,83 @@
+[2026-06-19T22:05:06Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-19T22:05:06Z] CHECK_OK pre-flight passed; awaiting run
+[2026-06-20T00:05:30Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T00:24:20Z] SIGNAL_RECEIVED cleaning up
+[2026-06-20T00:24:20Z] EXIT code=130 reason=signal
+[2026-06-20T00:24:25Z] RUN_CANCELED reason=iCloud_read_too_slow action=prune_corpus
+[2026-06-20T00:29:20Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T00:29:20Z] CHECK_OK pre-flight passed; awaiting run
+[2026-06-20T00:29:20Z] RUN_RESTART reason=pruned_corpus_3577_files
+[2026-06-20T00:29:29Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T00:57:27Z] SIGNAL_RECEIVED cleaning up
+[2026-06-20T00:57:27Z] EXIT code=130 reason=signal
+[2026-06-20T00:57:32Z] RUN_CANCELED reason=15_idle_connections_no_progress action=restart_no_thinking
+[2026-06-20T00:58:30Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T00:58:30Z] CHECK_OK pre-flight passed; awaiting run
+[2026-06-20T00:58:30Z] RUN_RESTART reason=no_thinking+max_workers_2
+[2026-06-20T00:58:30Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T01:05:00Z] SIGNAL_RECEIVED cleaning up
+[2026-06-20T01:05:00Z] EXIT code=130 reason=signal
+[2026-06-20T01:05:05Z] RUN_CANCELED reason=parallel_throttle_no_help action=max_workers_1
+[2026-06-20T01:05:24Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T01:05:25Z] CHECK_OK pre-flight passed; awaiting run
+[2026-06-20T01:05:25Z] RUN_RESTART reason=max_workers_1
+[2026-06-20T01:05:25Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T01:11:27Z] SIGNAL_RECEIVED cleaning up
+[2026-06-20T01:11:27Z] EXIT code=130 reason=signal
+[2026-06-20T01:11:32Z] RUN_CANCELED reason=stuck_no_semantic_progress
+[2026-06-20T01:12:00Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T01:12:01Z] CHECK_OK pre-flight passed; awaiting run
+[2026-06-20T01:12:01Z] RUN_RESTART reason=concurrency_1+token_budget_4000
+[2026-06-20T01:12:01Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T01:31:01Z] RUN_ERROR exit=137 elapsed=1140s
+[2026-06-20T01:45:55Z] DIAGNOSIS api_works_directly but_graphify_hangs_at_chunk=1
+[2026-06-20T01:46:06Z] RUN_RESTART reason=retry_after_api_responsive
+[2026-06-20T01:52:58Z] RUN_RESTART reason=fix_max_completion_tokens_16384
+[2026-06-20T02:03:57Z] RUN_RESTART reason=max_completion_1500_per_MiniMax_hard_cap
+[2026-06-20T02:10:57Z] PAUSED reason=minimax_1500_token_cap blocks_full_extraction
+[2026-06-20T04:45:31Z] WALL_CLOCK_LIMIT_REACHED exiting cleanly
+[2026-06-20T05:09:29Z] WALL_CLOCK_LIMIT_REACHED exiting cleanly
+[2026-06-20T05:38:30Z] WALL_CLOCK_LIMIT_REACHED exiting cleanly
+[2026-06-20T05:45:25Z] WALL_CLOCK_LIMIT_REACHED exiting cleanly
+[2026-06-20T10:17:10Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T10:17:10Z] CHECK_OK pre-flight passed; awaiting run
+[2026-06-20T10:17:45Z] SWITCH_BACKEND reason=minimax_1500_token_cap_to=deepseek
+[2026-06-20T10:17:45Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T10:17:45Z] CHECK_OK pre-flight passed; awaiting run
+[2026-06-20T10:21:15Z] RUN_START backend=deepseek model=deepseek-chat
+[2026-06-20T10:21:15Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T10:27:21Z] RUN_ERROR exit=137 elapsed=366s
+[2026-06-20T10:27:23Z] RUN_CANCELED reason=deepseek_hang_suspect
+[2026-06-20T10:30:37Z] RUN_RESTART reason=fresh_after_usage_csv_check
+[2026-06-20T10:30:37Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T10:33:16Z] RUN_ERROR exit=137 elapsed=159s
+[2026-06-20T10:33:18Z] RUN_RESTART_DEBUG reason=trace_deepseek_hang
+[2026-06-20T10:37:16Z] RUN_RESTART reason=accepted_15s_per_chunk_baseline
+[2026-06-20T10:37:16Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T10:44:22Z] RUN_ERROR exit=137 elapsed=426s
+[2026-06-20T10:54:02Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T10:54:02Z] CHECK_OK pre-flight passed; awaiting run
+[2026-06-20T10:57:21Z] RUN_START backend=MiniMax model=MiniMax-M3 max_completion=2048
+[2026-06-20T10:57:21Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T11:09:35Z] RUN_ERROR exit=137 elapsed=734s
+[2026-06-20T11:18:12Z] RUN_RESTART_FINAL backend=MiniMax chunk_rate=15s
+[2026-06-20T11:18:12Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T12:28:57Z] RUN_ERROR exit=137 elapsed=4245s
+[2026-06-20T12:28:59Z] KILLED_MINIMAX reason=switching_to_deepseek_confirmed_works
+[2026-06-20T12:29:49Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T12:29:49Z] CHECK_OK pre-flight passed; awaiting run
+[2026-06-20T12:30:16Z] RUN_START_DEEPSEEK_FULL reason=confirmed_works_60s_per_chunk
+[2026-06-20T12:30:16Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-20T14:29:48Z] LAUNCH_MONITOR reason=long_run_2_days
+[2026-06-20T14:41:40Z] LAUNCHAGENT_READY path=~/Library/LaunchAgents/com.pablo.graphify-brain.plist
+[2026-06-20T17:10:16Z] WALL_CLOCK_LIMIT_REACHED exiting cleanly
+[2026-06-20T17:10:16Z] RUN_ERROR exit=143 elapsed=16800s
+[2026-06-21T12:20:47Z] RESUME_AFTER_WALLCLOCK reason=12h_limit_instead_of_4h45m chunks_done=276
+[2026-06-21T12:21:01Z] RUN_RESTART_LONG reason=12h_limit_resume
+[2026-06-21T12:21:01Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-21T22:36:48Z] STATUS_UPDATE chunks=1115/1202 eta=40min
+[2026-06-21T22:52:29Z] RUN_COMPLETE elapsed=37888s
+[2026-06-22T11:51:58Z] CLUSTER_START reason=build_GRAPH_REPORT
+[2026-06-22T12:01:51Z] RUN_COMPLETE_FINAL reason=graph_done brain=13946_nodes_17765_edges_2339_communities
+[2026-06-22T15:26:08Z] CLEANUP_DONE reason=reclassify+person_merge+concept_filter
+[2026-06-22T15:35:03Z] VAULT_CLEAN reason=fixed_HTML_CORS+removed_unknown+people_aliases

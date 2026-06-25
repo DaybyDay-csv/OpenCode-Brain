@@ -1,0 +1,5 @@
+[2026-06-19T22:03:24Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-19T22:04:02Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-19T22:04:31Z] SIGNAL_RECEIVED cleaning up
+[2026-06-19T22:04:53Z] RUN_START corpus=/Users/pablo/Developer/graphs/_corpus output=/Users/pablo/Developer/graphs/brain
+[2026-06-19T22:04:53Z] CHECK_OK pre-flight passed; awaiting run
