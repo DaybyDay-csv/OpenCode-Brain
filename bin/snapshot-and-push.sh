@@ -5,6 +5,26 @@
 
 set -u
 
+# launchd runs with a minimal PATH that usually does NOT include
+# ~/.bun/bin or nvm shims, so `command -v bun` / `command -v node` fail
+# silently and the plugin never runs. Re-derive PATH up front so the
+# plugin and any git SSH helpers are reachable.
+for p in \
+  "$HOME/.bun/bin" \
+  "$HOME/.local/bin" \
+  "/opt/homebrew/bin" \
+  "/usr/local/bin" \
+  "/usr/bin" \
+  "/bin"; do
+  case ":$PATH:" in
+    *":$p:"*) ;;
+    *) [ -d "$p" ] && PATH="$p:$PATH" ;;
+  esac
+done
+# nvm: source the env file if it exists, to expose the current node binary.
+[ -s "$HOME/.nvm/nvm.sh" ] && \. "$HOME/.nvm/nvm.sh" --no-use 2>/dev/null
+export PATH
+
 PLUGIN="$HOME/.config/opencode/plugins/opencode-brain.ts"
 LOG_DIR="$HOME/Library/Logs/opencode-brain"
 LOG_FILE="$LOG_DIR/push.log"
